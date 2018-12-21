@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			#cont{width: 1000px;overflow: hidden;border: solid 1px black;margin: 10px auto;}
+			.box{width: 250px;border: solid 1px black;box-sizing: border-box;text-align: center;float: left;}
+			.box img{width: 30%;display: block;margin: 5px auto;}
+			.box span{display: block;color: red;}
+			.box p{height: 40px;overflow: hidden;font-size: 14px;line-height: 20px;}
+			.box em{display: block;width: 120px;line-height: 22px;color: #fff;background: blue;margin: 5px auto;}
+		</style>
+	</head>
+	<body>
+		<h2>这是商品列表<small><a href="car.html">去购物车</a></small></h2>
+		<div id="cont">
+			<!--<div class="box" index="">
+				<img src="https://img12.360buyimg.com/n7/jfs/t5050/1/1165634167/293759/f54c5ed2/58ed8800N261978fb.jpg">
+				<span>999</span>
+				<p>小米 红米Note4X 全网通版 3GB+32GB 樱花粉 移动联通电信4G手机</p>
+				<em>加入购物车</em>
+			</div>-->
+		</div>
+	</body>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../scripts/jquery.cookie.js"></script>
+	<script type="text/javascript">
+		class Shop{
+			constructor(options){
+				this.cont = options.cont ;
+				this.url = options.url ;
+
+				this.load()
+			}
+			load(){
+				var that = this ;
+				$.ajax({
+					url:this.url,
+					success:function(res){
+						console.log(res) ;
+						that.res = res;
+						that.display()
+					}
+				})
+			}
+			display(){
+				var str = "" ;
+				$.each(this.res, function(index, value){
+					str += `<div class="box" index="${value.goodsId}">
+								<img src="${value.src}">
+								<span>${value.price}</span>
+								<p>${value.name}</p>
+								<em>加入购物车</em>
+							</div>`
+					
+				}) ;
+				this.cont.html(str) ;
+				this.addEvent() ;
+			}
+			addEvent(){
+				var that = this ;
+				this.cont.on("click", "em", function(){
+					that.id = $(this).parent().attr("index") ;
+					that.setCookie() ;
+				})
+			}
+			setCookie(){
+				this.goods = JSON.parse($.cookie("goods")) || [] ;
+   				if(this.goods.length < 1){
+					this.goods.push({
+						id:this.id ,
+						num:1
+					})
+				}else{
+					var that = this ;
+					var onOFF = true ;
+					$.each(this.goods, function(index, value){
+						if(value.id == that.id){
+							that.goods[index].num++ ;
+							onOFF = false ;
+ 						}
+					})
+					if(onOFF){
+						this.goods.push({
+							id:this.id ,
+							num:1
+						})
+					}
+				}
+				$.cookie("goods", JSON.stringify(this.goods))
+			}
+		}
+		
+		new Shop({
+			url: "https://localhost:8000/data/goods.json" ,
+			cont: $("#cont") 
+		})
+	</script>
+</html>

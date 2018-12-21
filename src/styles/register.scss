@@ -1,0 +1,160 @@
+.margin{width: 1200px;margin: 0 auto;}
+
+body{
+	header{
+		padding-top : 50px; width: 1200px;height: 75px;
+		a.logo{ display: block;float: left }
+		div.myaccount{float: right;margin-right: 90px;margin-top: 55px;font:14px/20px "";color: #7a7a7a;
+						span{ margin: 0 10px;}
+					}
+	}
+	
+	div.cutline{
+		div.margin{ background: url(imgs/nologin.png) repeat-x 0 -166px;width: 1200px;height: 10px;}
+	}
+	
+	main{ margin-top: 30px;
+		div.margin{
+			div.main-l{ float: left;padding-left: 364px;
+				div.main-l-t{ width: 185px;height: 35px; margin-bottom: 23px;background: url(imgs/nologin.png) no-repeat 0 0;}
+				div.main-l-c{ width: 185px;height: 35px; margin-bottom: 23px;background: url(imgs/nologin.png) no-repeat 0 -58px;}
+				div.main-l-b{ width: 185px;height: 35px; margin-bottom: 23px;background: url(imgs/nologin.png) no-repeat 0 -114px;}
+				
+				div.tips{
+					width: 130px;height: auto;margin-left: 10px;
+					h3{font: 12px/22px "";color: #404040;font-weight: bold;}
+					p{font: 12px/22px "";color: #404040;}
+				}
+			}
+			
+			div.main-r{ float: left;width: 512px;padding-left: 23px;border-left: 1px solid #e1e1e1;
+				div.username{
+					p{width: 322px;height: 27px;font: 14px/21px "";color: #666;font-family: 宋体, Verdana, Arial;}
+					input{width: 284px;height: 34px;box-shadow: 0 0 7px #ccc;border: 1px solid #ccc;border-radius: 3px;}
+					span{font-size: 14px;color: #f00;}
+				}
+				
+				div.mail{ margin-top: 10px;
+					p{width: 322px;height: 27px;font: 14px/21px "";color: #666;font-family: 宋体, Verdana, Arial;}
+					input{width: 284px;height: 34px;box-shadow: 0 0 7px #ccc;border: 1px solid #ccc;border-radius: 3px;}
+					span{font-size: 14px;color: #f00;}
+				}
+				
+				div.password{ margin-top: 10px;
+					p{width: 322px;height: 27px;font: 14px/21px "";color: #666;font-family: 宋体, Verdana, Arial;}
+					input{width: 284px;height: 34px;box-shadow: 0 0 7px #ccc;border: 1px solid #ccc;border-radius: 3px;}
+					span{font-size: 14px;color: #f00;}
+				}
+				
+				div.strength{ display: flex; margin-top: 10px;
+					span{font: 14px/21px "";color: #666;font-family: 宋体, Verdana, Arial;}
+					ul{ display: flex;
+						li{
+							font: 14px/21px "";color: #666;font-family: 宋体, Verdana, Arial;width: 48px;height: 21px;text-align: center;
+						}
+					}
+				}
+				
+				div.verify{ margin-top: 10px;
+					p{width: 322px;height: 27px;font: 14px/21px "";color: #666;font-family: 宋体, Verdana, Arial;}
+					input{width: 284px;height: 34px;box-shadow: 0 0 7px #ccc;border: 1px solid #ccc;border-radius: 3px;}
+					span{font-size: 14px;color: #f00;}
+				}
+				
+				div.code{ margin-top: 10px;position: relative;
+					p{width: 322px;height: 27px;font: 14px/21px "";color: #666;font-family: 宋体, Verdana, Arial;}
+					input{width: 89px;height: 21px;box-shadow: 0 0 7px #ccc;border: 1px solid #ccc;border-radius: 3px;}
+					div#randomCode{width: 100px;height: 22px;background: #99f;position: absolute;top: 27px;left: 100px;}
+				}
+				
+				div.agreement{ margin-top: 10px;
+					span{ width: 300px;height: 33px;font: 12px/33px "";color: #666;
+					      a{ font: 12px/33px "";color: #007AFF;
+						     &:hover{ text-decoration: underline ;}
+						  } 
+					}
+				}
+				
+				input.sub{
+					width: 124px;height: 35px;border: none;font: 24px/35px "";color: #fff;font-weight: bold;border-radius: 5px;background: url(imgs/nologin.png) no-repeat -7px -292px;padding-left: 10px;
+				}
+				
+				div.login_text{ width: 322px;height: 37px;
+					span{font: 14px/37px "";color: #797979;}
+					a{font: 14px/37px "";color: #da0203;margin-left: 10px;
+					&:hover{ text-decoration: underline ;}
+					}
+				}
+				
+				div.login_text2{ width: 322px;height: 37px;font: 14px/37px "";color: #797979;}
+				
+				div.more{ display: flex;flex-wrap: wrap;width: 322px;
+						a.alipay{ width: 92px;height: 28px;background: url(imgs/nologin.png) no-repeat -9px -340px;}
+						a.sina{ width: 92px;height: 28px;background: url(imgs/nologin.png) no-repeat -197px -294px;}
+						a.QQ{ width: 92px;height: 28px;background: url(imgs/nologin.png) no-repeat -113px -340px;}
+						a.renn{ width: 92px;height: 28px;background: url(imgs/nologin.png) no-repeat -9px -378px;}
+						a.Netease{ width: 92px;height: 28px;background: url(imgs/nologin.png) no-repeat -113px -379px;}
+				}
+			}
+		}
+	}
+	
+	footer{ margin-top: 70px;
+		div.margin{ height: 27px;background: #b7060e;font: 12px/27px "";color: #000;text-align: center;font-family: "宋体",Verdana,Arial}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
