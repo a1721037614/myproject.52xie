@@ -7,5 +7,7 @@ requirejs.config({
 		"common" : "common",
 		"fontscroll" : "fontscroll",
 		"require" : "libs/require",
+		"cookie" : "jquery.cookie.1",
+		"verify" : "verify"
 	}
 });

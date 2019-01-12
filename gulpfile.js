@@ -57,25 +57,24 @@ gulp.task("buildIMG", ()=>{
 })
 
 gulp.task("watch", ()=>{
-		gulp.watch("./src/**/*.scss",["buildCSS"]) ;
-		gulp.watch("./src/**/*.css",["buildCSS"]) ;
+		gulp.watch("./src/styles/*.scss",["buildCSS"]) ;
+		gulp.watch("./src/styles/**/*.css",["buildCSS"]) ;
 		gulp.watch("./src/**/*.js",["buildJS"]) ;
-		gulp.watch("./src/**/*.html",["buildHTML"]);
+		gulp.watch("./src/pages/*.html",["buildHTML"]);
 		gulp.watch("../src/styles/imgs/*.*",["buildIMG"])
 })
  
 gulp.task('webserver', ["watch"],  function() {
-	gulp.src('dist')
-		.pipe(webserver({
-			livereload: true, //是否支持热部署
-			https: true,      //
-			proxies : [
-				{	
-					source: "/listmore" ,
-					target: "https://m.lagou.com/listmore.json"
-				}
-			]
-		}));
+	gulp.src('dist').pipe(webserver({
+		livereload: true, //是否支持热部署,页面自动刷新。
+		https: true,      //
+		proxies : [
+			{	
+				source: "/listmore" ,
+				target: "https://m.lagou.com/listmore.json"
+			}
+		]
+	}));
 });
 
 gulp.task("build",["buildJS","buildHTML","buildCSS","buildIMG"])
